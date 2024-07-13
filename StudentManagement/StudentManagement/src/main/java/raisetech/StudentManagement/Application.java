@@ -1,5 +1,4 @@
-//動画確認
-
+//まとめたもの(最後動画）
 package raisetech.StudentManagement;
 
 import org.springframework.boot.SpringApplication;
@@ -10,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
 @RestController
-public class StudentManagementApplication {
+public class Application {
 
   private String name = "Enami Kouji";
   private String age = "37";
@@ -24,36 +23,8 @@ public class StudentManagementApplication {
     return name + " " + age + "歳";
   }
 
-//  @GetMapping("/name")
-//  public String getName() {
-//    return name;
-//  }
-//  @GetMapping("/age")
-//  public  String getAge(){
-//    return age;
-//  }
-
-  @PostMapping("/studentInfo")
-  public void setName(String name, String age) {
-    this.name = name;
-    this.age = age;
-  }
-
   @PostMapping("/studentName")
-  public void updateStudentName(String name) {
+  public void UpdateName(String name) {
     this.name = name;
   }
-
-//  @PostMapping("/studentInfo")
-//  public void setName(String name) {
-//    this.name = name;
-//  }
-
-//  @PostMapping("/name")
-//  public void setName(String name){
-//    this.name = name;
-//  }
-  // GET POST
-  //　GETは取得する、リクエストの結果を受け取る
-  //　POSTは情報を与える、渡す
 }
