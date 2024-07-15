@@ -1,6 +1,7 @@
 //Mapで作成
-package raisetech.StudentManagement;
+package kadai_17;
 
+import java.util.HashMap;
 import java.util.Map;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -15,16 +16,20 @@ public class ApplicationMap {
 
   private Map<String, String> student;
 
-  public static void main(String[] args) {
-    SpringApplication.run(StudentManagementApplication.class, args);
+  public ApplicationMap() {
+    this.student = new HashMap<>(); // マップを初期化
   }
 
-  @GetMapping("/studentInfo")
+  public static void main(String[] args) {
+    SpringApplication.run(ApplicationMap.class, args);
+  }
+
+  @GetMapping("/studentInfo2")
   public Map<String, String> getStudent() {
     return student;
   }
 
-  @PostMapping("/studentInfo")
+  @PostMapping("/studentInfo2/add")
   public String addStudent(
       @RequestParam String name,
       @RequestParam String age
