@@ -1,0 +1,10 @@
+# Ignore IntelliJ IDEA files
+.idea/
+
+# Ignore macOS system files
+.DS_Store
+
+# Ignore compiled output
+/out/
+
+.idea/
