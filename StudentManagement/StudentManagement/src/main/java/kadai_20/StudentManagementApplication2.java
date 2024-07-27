@@ -1,5 +1,6 @@
-package raisetech.StudentManagement;
+package kadai_20;
 
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,25 +10,28 @@ import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import raisetech.StudentManagement.Student;
+import raisetech.StudentManagement.StudentRepository;
 
 @SpringBootApplication
 @RestController
-public class StudentManagementApplication {
+public class StudentManagementApplication2 {
 
   @Autowired
-  private StudentRepository repository;
+  private StudentRepository2 repository;
 
   //private String name = "Enami Kouji";
   //private int age = 37;
 
   public static void main(String[] args) {
-    SpringApplication.run(StudentManagementApplication.class, args);
+    SpringApplication.run(StudentManagementApplication2.class, args);
   }
+
   @GetMapping("/student")
-  public String getStudent(@RequestParam String name){
-    Student student = repository.searchByName(name);
-    return student.getName() + " " + student.getAge() + "歳";
+  public List<Student> getAllStudents() {
+    return repository.getAllStudents();
   }
+
   //GET POST
   //GETは取得する、リクエストの結果を受け取る
   //POSTは情報を与える、渡す
